@@ -18,7 +18,9 @@ but WITHOUT ANY WARRANTY.
 
 Renderer *g_Renderer = NULL;
 
-Object* C_Object;
+Object* C_Object[50];
+int count = 0;
+
 
 void RenderScene(void)
 {
@@ -26,8 +28,11 @@ void RenderScene(void)
 	glClearColor(0.0f, 0.3f, 0.3f, 1.0f);
 
 	// Renderer Test
-	C_Object->Update(1,1);
-	g_Renderer->DrawSolidRect(C_Object->X, C_Object->Y, C_Object->Z, C_Object->Size, C_Object->R, C_Object->G, C_Object->B, C_Object->A);
+	for (int i = 0; i < count; i++)
+	{
+		C_Object[i]->Update(1,1);
+		g_Renderer->DrawSolidRect(C_Object[i]->X, C_Object[i]->Y, C_Object[i]->Z, C_Object[i]->Size, C_Object[i]->R, C_Object[i]->G, C_Object[i]->B, C_Object[i]->A);
+	}
 
 	glutSwapBuffers();
 }
@@ -40,6 +45,18 @@ void Idle(void)
 
 void MouseInput(int button, int state, int x, int y)
 {
+
+	if ((button == GLUT_LEFT_BUTTON && state == GLUT_UP) )
+	{
+		if (count < 50)
+		{
+			C_Object[count] = new Object();
+			C_Object[count]->SetObject(x - 250, 250 - y, 0, 5, 1, 1, 1, 1);
+
+			count++;
+		}
+	}
+
 	RenderScene();
 }
 
@@ -78,11 +95,6 @@ int main(int argc, char **argv)
 	{
 		std::cout << "Renderer could not be initialized.. \n";
 	}
-
-	C_Object = new Object();
-	C_Object->SetObject(100, -100, 0, 5,0,1,0,1);
-
-
 
 	glutDisplayFunc(RenderScene);
 	glutIdleFunc(Idle);
