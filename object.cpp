@@ -5,9 +5,6 @@
 
 float Object::SetObject(float x, float y, float z, float size, float r, float g, float b, float a)
 {
-	
-
-
 	X = x;
 	Y = y;
 	Z = z;
@@ -22,15 +19,11 @@ float Object::SetObject(float x, float y, float z, float size, float r, float g,
 
 float Object::Update(float vector_X, float vector_Y)
 {
-	
-
-	dir_X = vector_X * 0.1;
-	dir_Y = vector_Y * 0.1;
-
+	dir_X = vector_X * 0.2;
+	dir_Y = vector_Y * 0.2;
 
 	 X += dir_X;
 	 Y += dir_Y;
-
 
 	return 0;
 }
