@@ -32,13 +32,24 @@ void RenderScene(void)
 	{
 		int random_X, random_Y, sel;
 
-		random_X = rand() % 3 - 1;
-		random_Y = rand() % 3 - 1;
+		random_X = rand() % 2;
+		random_Y = rand() % 2;
 
-		if (random_X == 0 || random_Y == 0)
+		if (random_X == 0)
 		{
-			random_X += 1;
-			random_Y -= 1;
+			random_X -= 1;;
+		}
+		if (random_X == 1)
+		{
+			random_X += 1;;
+		}
+		if (random_Y == 0)
+		{
+			random_Y -= 1;;
+		}
+		if (random_Y == 1)
+		{
+			random_Y += 1;;
 		}
 
 		C_Object[i]->Update(random_X, random_Y);
