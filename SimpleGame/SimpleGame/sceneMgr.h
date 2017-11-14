@@ -18,6 +18,8 @@ public:
 	bullet*		Obj_bullet[30];
 	arrow*		Obj_arrow[100];
 
+	GLuint imageNum[4];
+
 	int	charNumber{ 0 };
 	int	buildingNumber{ 0 };
 	int bulletNumber{ 0 };
@@ -25,12 +27,16 @@ public:
 
 	Renderer *g_Renderer;
 
+
+	void checkcollision();
+
+
 	void IsInitialized();
 	void RenderObjects();
 	void ClickMouse(int x, int y);
 
 	void AddBullet();
-	void AddArrow(int x, int y);
+	void AddArrow(int x, int y, int num);
 
 	float startTime{ 0.f };
 	float nowTime{ 0.f };

@@ -159,6 +159,7 @@
     <ClInclude Include="building.h" />
     <ClInclude Include="bullet.h" />
     <ClInclude Include="character.h" />
+    <ClInclude Include="LoadPng.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="sceneMgr.h" />
@@ -170,6 +171,7 @@
     <ClCompile Include="building.cpp" />
     <ClCompile Include="bullet.cpp" />
     <ClCompile Include="character.cpp" />
+    <ClCompile Include="LoadPng.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="sceneMgr.cpp" />
     <ClCompile Include="SimpleGame.cpp" />

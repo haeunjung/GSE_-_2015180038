@@ -12,6 +12,9 @@ public:
 
 	float dirx, diry;
 
+	bool dieSwitch{ true };
+	int	hp{ 100 };
+
 	int	Update(float fTime);
 };
 

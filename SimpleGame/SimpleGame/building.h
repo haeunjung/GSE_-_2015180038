@@ -16,6 +16,9 @@ public:
 	float bulletTime{ 0.f };
 	sceneMgr* psceneMgr{ nullptr };
 
+	bool dieSwitch{ true };
+	int	hp{ 100 };
+
 	int	Update(float fTime);
 
 };

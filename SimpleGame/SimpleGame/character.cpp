@@ -33,6 +33,13 @@ character::~character()
 
 int character::Update(float fTime)
 {
+	if (hp <= 0) dieSwitch = true;
+	if (dieSwitch)
+	{
+		hp = 20;
+		return 0;
+	}
+
 	if (x > 250) 
 	{
 		dirx *= -1;
@@ -60,7 +67,7 @@ int character::Update(float fTime)
 	if (arrowTime > 0.5f)
 	{
 		arrowTime = 0.f;
-		psceneMgr->AddArrow(x, y);
+		psceneMgr->AddArrow(x, y, Number);
 	}
 
 	return 0;

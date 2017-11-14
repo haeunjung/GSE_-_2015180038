@@ -15,6 +15,11 @@ public:
 	float dirx, diry;
 	float arrowTime{ 0.f };
 
+	bool dieSwitch{ true };
+	int	hp{ 20 };
+
+	int	Number{ -1 };
+
 	sceneMgr* psceneMgr{ nullptr };
 
 	int	Update(float fTime);

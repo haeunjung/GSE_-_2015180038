@@ -32,6 +32,11 @@ arrow::~arrow()
 
 int arrow::Update(float fTime)
 {
+	if (dieSwitch) {
+		hp = 100;
+		return 0;
+	}
+
 	if (x > 250)
 	{
 		dirx *= -1;

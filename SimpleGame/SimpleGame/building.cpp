@@ -25,6 +25,14 @@ building::~building()
 
 int building::Update(float fTime)
 {
+	if (hp <= 0) dieSwitch = true;
+	if (dieSwitch)
+	{
+		hp = 100;
+		return 0;
+	}
+
+
 	bulletTime += fTime;
 	if (bulletTime > 0.5f)
 	{

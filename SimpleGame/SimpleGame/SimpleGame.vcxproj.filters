@@ -51,6 +51,9 @@
     <ClInclude Include="arrow.h">
       <Filter>소스 파일\Objects</Filter>
     </ClInclude>
+    <ClInclude Include="LoadPng.h">
+      <Filter>소스 파일\Shaders</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -76,6 +79,9 @@
     </ClCompile>
     <ClCompile Include="arrow.cpp">
       <Filter>소스 파일\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadPng.cpp">
+      <Filter>소스 파일\Shaders</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

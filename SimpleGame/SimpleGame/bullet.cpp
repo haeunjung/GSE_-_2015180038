@@ -32,6 +32,14 @@ bullet::~bullet()
 
 int bullet::Update(float fTime)
 {
+	if (dieSwitch)
+	{
+		hp = 100;
+		x = 0;
+		y = 0;
+		return 0;
+	}
+
 	if (x > 250)
 	{
 		dirx *= -1;
